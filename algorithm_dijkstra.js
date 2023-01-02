@@ -1,11 +1,13 @@
+
+// thiết lập cố định các cạnh nối giữa các đỉnh
 var ALLLOWED = [[false, true,  true,  true,  true,  false, false, false],   
-									 [true,  false, true,  true,  false, true,  false,  false],
-									 [true,  true,  false, false, true,  false,  false,  false],
-									 [true,  true,  false, false, false, true,  false, false],
-									 [true,  false, true,  false, false,  false, true,  false],
-									 [false, true,  false,  true,  false, false, true,  true],
-									 [false, false,  true,  false, true,  true,  false, true],
-									 [false, false, false, false,  false,  true,  true,  false]];
+	       [true,  false, true,  true,  false, true,  false,  false],
+	       [true,  true,  false, false, true,  false,  false,  false],
+ 	       [true,  true,  false, false, false, true,  false, false],
+ 	       [true,  false, true,  false, false,  false, true,  false],
+	       [false, true,  false,  true,  false, false, true,  true],
+	       [false, false,  true,  false, true,  true,  false, true],
+               [false, false, false, false,  false,  true,  true,  false]];
 
 
 let distance = {};
@@ -72,14 +74,15 @@ function Algorithm() {
        {
           let minNode = pq.dequeue();
           let currentnode= minNode.element;
-            for( var i=0 ;i<8;i++)
+            for( var  i= 0 ; i<8; i++)
           {   
                // xét tìm cạnh kề đỉnh hiện tại(currentnode), các cạnh kề là i
               if (!checked.includes(i) &&
-                currentnode !=i &&
-                ALLLOWED[currentnode][i] &&
-                this.draw.matrix_edge.includes(`${[currentnode,i]}`)||
-                this.draw.matrix_edge.includes(`${[i,currentnode]}`) )
+                  currentnode !=i &&
+                  ALLLOWED[currentnode][i] &&
+                  this.draw.matrix_edge.includes(`${[currentnode,i]}`)||
+                 this.draw.matrix_edge.includes(`${[i,currentnode]}`) 
+		 )
             {         
               let alt =  distance[currentnode] + this.draw.adj_matrix[currentnode][i].value_edge ;
               let alt_1 = distance[currentnode] + this.draw.adj_matrix[i][currentnode].value_edge ;
@@ -97,9 +100,10 @@ function Algorithm() {
                                 continue
                                }
              }
-            }
+           }
         }
-
+         // trả về kết quả của thuật toán , disatance: tổng gái trị đường đi ngắn nhất
+	 //                                 prev: đường đi từng đỉnh
         return {distance,prev}
     }
 }
