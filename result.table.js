@@ -4,9 +4,8 @@
 function Result_table() {
 
 
-    Result_table.prototype.make_coloum_vertex = (i) =>{
-
-  
+     Result_table.prototype.make_coloum_vertex = (i) =>
+    {
         this.style = ctx.strokeStyle = "black";
         this.color = ctx.fillStyle = "blue";
         this.font = ctx.font = "13px Arial";
@@ -14,10 +13,11 @@ function Result_table() {
         this.rect= ctx.rect(20, 84+(29*i), 50, 30	);
         this.stroke = ctx.stroke();
         
-    }
+     }
 
 
-    Result_table.prototype.make_colum_cost = (i,value)=>{
+     Result_table.prototype.make_colum_cost = (i,value)=>
+    {
         this.style = ctx.strokeStyle = "black";
         this.color = ctx.fillStyle = "black";
         this.font = ctx.font = "13px Arial";
@@ -27,11 +27,10 @@ function Result_table() {
 
     }
 
-    Result_table.prototype.make_colum_path = (i,value)=>{
-
+     Result_table.prototype.make_colum_path = (i,value)=>
+    {
         this.rect= ctx.rect(70, 84+(29*i), 250, 30	);
         this.stroke = ctx.stroke();
-
     }
 
 
