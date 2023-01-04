@@ -91,7 +91,6 @@ function Object_vertex()  // tạo các đỉnh
 	//tạo ma trận thiết lập các liên kết giữa các đỉnh
 	Object_vertex.prototype.creatematrix = function()
 	{
-         
 		// 
 		for (i = 0; i < this.number_vertexs; i++)
 		{
@@ -102,7 +101,7 @@ function Object_vertex()  // tạo các đỉnh
 		{
 			for (j = i + 1; j < this.number_vertexs; j++)
 			{
-                 // tạo độ dài cạnh nối giữa các node cho phép
+                 // tạo độ dài cạnh nối giữa các đỉnh cho phép
 				if( (ALLLOWED[i][j]) )
 				{
 				var edge_length = Math.floor(Math.random()* 9) + 1;
@@ -130,7 +129,7 @@ function Object_vertex()  // tạo các đỉnh
 	};
 
 
-   ///  tạo các cạnh nối giữa các node
+   ///  tạo các cạnh nối giữa các đỉnh
 	Object_vertex.prototype.create_edge = function()
 	{
 
